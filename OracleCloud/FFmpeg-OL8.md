@@ -14,7 +14,7 @@ This short guide will teach you how to install FFmpeg on Oracle Linux 8, as by d
 sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 ```
 
-#### Add EPEL to your system: (This might not be needed, only if FFmpeg fails to install).
+#### Add RPMFusion to your system: (This might not be needed, only if FFmpeg fails to install).
 
 ```
 sudo dnf localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm

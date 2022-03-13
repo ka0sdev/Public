@@ -1,0 +1,20 @@
+name: Deployment Workflow
+on:
+  push:
+    branches: [Production]
+
+jobs:
+  job_one:
+    name: Deploy
+    runs-on: OL8
+    steps:
+      - name: remote ssh commands test
+        uses: appleboy@ssh-action@master
+        with:
+          host: 141.144.254.88
+          username: opc
+          key: ${{ secrets.PRIV_SECRET }}
+          port: 22
+          script: |
+            git pull origin master
+            git status

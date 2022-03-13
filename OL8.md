@@ -11,18 +11,18 @@ ___
 - First we need to install and register the EPEL repositories, which will ultimately allow us to install FFmpeg once we have completed our prerequisites.
 
 
-###### Install and register EPEL repository by running following in your terminal:
+##### Install and register EPEL repository by running following in your terminal:
 ```
 sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 ```
 
-###### Update Dandified YUM (Package Installer):
+##### Update Dandified YUM (Package Installer):
 ```
 sudo dnf update
 ```
 Please beware that this process may take quite a while. 
 
-###### Check if EPEL is added to repolist.
+##### Check if EPEL is added to repolist.
 ```
 sudo dnf repolist
 ```
@@ -32,13 +32,13 @@ Usually we require Powertools in order to install **FFmpeg**, this is usually sh
 
 I discovered after digging through every repo available on OL8, that powertools is in fact available, however Oracle decided to call this: **ol8_codebuilder_ready**. This repo is disabled by default, and this is also why we cant get FFmpeg straight away, due to missing dependencies from powertools.
 
-###### Check the state of ol8_codeready_builder:
+##### Check the state of ol8_codeready_builder:
 ```
 sudo dnf repolist all
 ```
 This will output every single repo available on the system, as well as their current activation state.
 
-###### Enable ol8_codeready_builder:
+##### Enable ol8_codeready_builder:
 ```
 sudo dnf config-manager --set-enabled ol8_codeready_builder
 ```
@@ -46,7 +46,7 @@ For reference you can run *dnf repolist all* again to check that is has been act
 
 Now that we have enabled the ol8_codeready_builder we have access to all the dependency tools which is required by FFmpeg.
 
-###### Install FFmpeg
+##### Install FFmpeg
 ```
 sudo dnf install ffmpeg
 ```

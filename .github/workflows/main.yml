@@ -16,5 +16,5 @@ jobs:
           key: ${{ secrets.PRIV_SECRET }}
           port: 22
           script: |
+            cd /home/git-test/hotfixes/
             git pull origin master
-            git status

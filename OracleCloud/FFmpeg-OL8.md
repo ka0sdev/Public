@@ -2,8 +2,6 @@
 
 This short guide will teach you how to install FFmpeg on Oracle Linux 8, as by default EPEL repositories are not available on any Linux distribution including **OL8**.
 
-#### Pictures will be added soonish.
-
 ### Steps
 
 ---

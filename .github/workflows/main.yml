@@ -6,7 +6,7 @@ on:
 jobs:
   job_one:
     name: Deploy
-    runs-on: OL8
+    runs-on: ubuntu-latest
     steps:
       - name: remote ssh commands test
         uses: appleboy/ssh-action@master

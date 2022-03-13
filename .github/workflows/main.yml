@@ -17,4 +17,4 @@ jobs:
           port: 22
           script: |
             cd /home/git-test/hotfixes/
-            git pull origin production
+            git pull origin Production

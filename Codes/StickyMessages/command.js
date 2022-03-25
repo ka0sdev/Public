@@ -70,7 +70,7 @@ module.exports = {
 
     try {
       switch(options.getSubcommand()) {
-        case "add": 
+        case "create": 
         StickyDB.findOne({ GuildID: guildId, ChannelID: Channel.id }, async (err, data) => {
           if (err) throw err;
           if(data) {

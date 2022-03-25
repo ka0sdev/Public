@@ -9,8 +9,8 @@ module.exports = {
   permission: "MANAGE_MESSAGES",
   options: [
     {
-      name: "add",
-      description: "Add a new sticky message.",
+      name: "create",
+      description: "Create a sticky message.",
       type: "SUB_COMMAND",
       options: [
         {

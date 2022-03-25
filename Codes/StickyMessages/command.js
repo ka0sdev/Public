@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 const { MessageEmbed, CommandInteraction } = require( 'discord.js' );
-const { icons, colors } = require('../../structures');
+const { icons } = require('../../structures');
 const StickyDB = require("../../structures/schemas/sticky");
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
   options: [
     {
       name: "create",
-      description: "Create a sticky message.",
+      description: "Creates a new sticky message.",
       type: "SUB_COMMAND",
       options: [
         {
@@ -40,7 +40,7 @@ module.exports = {
       options: [
         {
           name: "channel",
-          description: "Mention the channel you wish to delete the sticky message from.",
+          description: "Mention the channel you wish to delete a sticky message from.",
           type: "CHANNEL",
           required: true,
         },
@@ -60,10 +60,13 @@ module.exports = {
   async execute (interaction) {
     const { options, member, guildId } = interaction;
 
+    const Embed = new MessageEmbed();
+    Embed.setColor(`YELLOW`);
+
+    // Get our values from the interaction;
     const Channel = options.getChannel("channel");
     const Threshold = options.getNumber("threshold");
     const Content = options.getString("text");
-    const Embed = new MessageEmbed();
 
     try {
       switch(options.getSubcommand()) {
@@ -89,9 +92,15 @@ module.exports = {
             { name: "Message:", value: `${Content}` })
         interaction.reply({
           embeds: [Embed], ephemeral: true
-        })};
-    });
+        });
+        Channel.send({ embeds: [new MessageEmbed().setTitle(`${icons.pinned} Sticky Message`).setDescription(`${Content}`)] }).then(async (stickmsg) => {
+          const DB = await StickyDB.findOne({ GuildID: guildId, ChannelID: Channel.id })
+          DB.Lastmsg = stickmsg.id;
+          DB.save();
+        })
+        }})
         break;
+
         case "remove":
         StickyDB.findOne({ GuildID: guildId, ChannelID: Channel.id }, async(err, data) => {
           if (err) throw err;
@@ -103,6 +112,7 @@ module.exports = {
           }
         })
         break;
+
         case "list":
         StickyDB.find({ GuildID: guildId }, async (err, data) => {
           if(err) throw err;

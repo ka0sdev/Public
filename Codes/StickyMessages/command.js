@@ -69,7 +69,7 @@ module.exports = {
     const Content = options.getString("text");
 
     // Check if threshold is below 3, otherwise the code can fail to delete the old sticky due to API response speed.
-    if (Threshold < 3) return interaction.reply({ embeds: [Embed.setColor(`RED`).setDescription(`You cannot set the threshold below 3.`)], ephemeral: true })
+    if (options.getSubcommand() === 'create' && Threshold < 3) return interaction.reply({ embeds: [Embed.setColor(`RED`).setDescription(`You cannot set the threshold below 3.`)], ephemeral: true })
 
     try {
       switch(options.getSubcommand()) {

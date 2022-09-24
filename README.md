@@ -1,5 +1,5 @@
 <br/>
-<p align="center">
+<div align="center">
   <a href="https://github.com/ka0sdev/Public">
     <img src="https://i.imgur.com/9JYAyTO.png" alt="Logo">
   </a>
@@ -10,6 +10,7 @@
 <p>
 <img src="https://img.shields.io/github/contributors/ka0sdev/Public?color=dark-green"> <img src="https://img.shields.io/github/forks/ka0sdev/Public?style=social"> <img src="https://img.shields.io/github/stars/ka0sdev/Public?style=social"> <img src="https://img.shields.io/github/issues/ka0sdev/Public"> <img src="https://img.shields.io/github/license/ka0sdev/Public">
 </p>
+</div>
 <br />
 
 ## About

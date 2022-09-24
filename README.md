@@ -7,10 +7,11 @@
   <h3 align="center">ka0s.xyz Public Repository</h3>
 
 </p>
+<p>
 <center>
 <img src="https://img.shields.io/github/contributors/ka0sdev/Public?color=dark-green"><img src="https://img.shields.io/github/forks/ka0sdev/Public?style=social"><img src="https://img.shields.io/github/stars/ka0sdev/Public?style=social"><img src="https://img.shields.io/github/issues/ka0sdev/Public"><img src="https://img.shields.io/github/license/ka0sdev/Public">
-
 </center>
+</p>
 <br />
 
 ## About
